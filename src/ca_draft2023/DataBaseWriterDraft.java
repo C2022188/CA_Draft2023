@@ -16,14 +16,15 @@ import java.util.List;
  */
 public class DataBaseWriterDraft extends DatabaseDraft {
     
-     public boolean newUUser(Users users) throws SQLException {
+     public boolean newUser(Users users) throws SQLException {
         try(
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
             Statement stmt = conn.createStatement();  
         ){
             String sql = String.format("INSERT INTO " + TABLE_NAME + " VALUES ("
-                    + "'%d', '%s', '%s', '%s', '%s', '%f', '%f', '%f', %b);",
-                    users.getID(), users.getFirstName(), users.getLastName(), users.getEmail(), users.getPPSN(), users.getGrossIncome(), users.getTaxCredit(), users.getTaxOwed(), users.isUsertype());
+                    + "'%d', '%s', '%s', '%s', '%s', '%f', '%f', '%f', '%b', '%s', %s);",
+                    users.getID(), users.getFirstName(), users.getLastName(), users.getEmail(), users.getPPSN(), users.getGrossIncome(), 
+                    users.getTaxCredit(), users.getTaxOwed(), users.isUsertype(), users.getUsername(), users.getPassword());
             stmt.execute(sql);
             return true;
         } catch (Exception e) {

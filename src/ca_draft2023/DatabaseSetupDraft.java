@@ -27,14 +27,16 @@ public class DatabaseSetupDraft extends DatabaseDraft {
             String sql = 
                     "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ("
                     + "id INT PRIMARY KEY,"
-                    + "firstName VARCHAR(255,"
-                    + "lastName VARCHAR(255,"
-                    + "email VARCHAR(255,"
-                    + "PPSN VARCHAR(255,"
+                    + "firstName VARCHAR(255),"
+                    + "lastName VARCHAR(255),"
+                    + "email VARCHAR(255),"
+                    + "PPSN VARCHAR(255),"
                     + "grossIncome DOUBLE(10, 2),"
                     + "taxCredit DOUBLE(10, 2),"
                     + "taxOwed DOUBLE (10, 2),"
-                    + "userType BOOLEAN"
+                    + "userType BOOLEAN,"
+                    + "username VARCHAR(255),"
+                    + "password VARCHAR(255)"
                     + ");";
             stmt.execute(sql);
             return true;
@@ -44,13 +46,3 @@ public class DatabaseSetupDraft extends DatabaseDraft {
 }
 }
 }
-
-// private String firstName;
-//    private String lastName;
-//    private String email;
-//    private String PPSN;
-//    private double grossIncome;
-//    private double taxCredit;
-//    private double taxOwed;
-//    private boolean admin;
-//    private static int currentID = 1;

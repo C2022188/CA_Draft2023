@@ -20,10 +20,14 @@ public class Users extends CA_Draft2023{
     private double grossIncome;
     private double taxCredit;
     private double taxOwed;
+    
     private boolean usertype;
+    private String username;
+    private String password;
+    
 
-    public Users(int ID, String firstName, String lastName, String email, String PPSN, double grossIncome, double taxCredit, double taxOwed, boolean usertype) {
-        this.ID = currentID++;
+    public Users(int ID, String firstName, String lastName, String email, String PPSN, double grossIncome, double taxCredit, double taxOwed, boolean usertype, String username, String password) {
+        this.ID = ID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -32,8 +36,10 @@ public class Users extends CA_Draft2023{
         this.taxCredit = taxCredit;
         this.taxOwed = taxOwed;
         this.usertype = usertype;
+        this.username = username;
+        this.password = password;
     }
-    
+
 
    
 
@@ -105,4 +111,22 @@ public class Users extends CA_Draft2023{
         return ID;
     }
     
+    
+    
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 }
