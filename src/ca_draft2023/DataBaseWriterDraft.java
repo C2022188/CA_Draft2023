@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 /**
  *
@@ -21,8 +22,8 @@ public class DataBaseWriterDraft extends DatabaseDraft {
             Statement stmt = conn.createStatement();  
         ){
             String sql = String.format("INSERT INTO " + TABLE_NAME + " VALUES ("
-                    + "'%s', '%s', '%s', %d);",
-                    patient.getName(), patient.getBirthDate(), patient.getBloodType(), patient.getPatientID());
+                    + "'%d', '%s', '%s', '%s', '%s', '%f', '%f', '%f', %b);",
+                    users.getID(), users.getFirstName(), users.getLastName(), users.getEmail(), users.getPPSN(), users.getGrossIncome(), users.getTaxCredit(), users.getTaxOwed(), users.isUsertype());
             stmt.execute(sql);
             return true;
         } catch (Exception e) {
@@ -31,9 +32,9 @@ public class DataBaseWriterDraft extends DatabaseDraft {
         }
     }
     
-    public boolean addAllPatients(List<Patient> patientList) {
+    public boolean addAllUsers(List<Users> usersList) {
         return true;
     }
 }
     
-}
+

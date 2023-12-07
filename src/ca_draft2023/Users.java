@@ -100,5 +100,9 @@ public class Users extends CA_Draft2023{
     public static int getCurrentID() {
         return currentID;
     }
+
+    public int getID() {
+        return ID;
+    }
     
 }
