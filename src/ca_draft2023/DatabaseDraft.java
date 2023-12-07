@@ -8,6 +8,15 @@ package ca_draft2023;
  *
  * @author caroo
  */
-public class DatabaseDraft {
+public abstract class DatabaseDraft {
     
+    protected final static String DB_BASE_URL = "jdbc:mysql://localhost";
+    protected final static String USER = "ooc2023";
+    protected final static String PASSWORD = "ooc2023";
+    protected final static String DB_NAME = "CA_Draft";
+    protected final static String TABLE_NAME = "usersData_Draft";
+    // jdbc:mysql://localhost/hospital
+    protected final static String DB_URL = DB_BASE_URL + "/" + DB_NAME;
 }
+    
+

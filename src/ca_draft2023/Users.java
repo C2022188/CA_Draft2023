@@ -8,6 +8,97 @@ package ca_draft2023;
  *
  * @author caroo
  */
-public class Users {
+public class Users extends CA_Draft2023{
+    
+    private int ID;
+    private static int currentID = 1;
+    
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String PPSN;
+    private double grossIncome;
+    private double taxCredit;
+    private double taxOwed;
+    private boolean usertype;
+
+    public Users(int ID, String firstName, String lastName, String email, String PPSN, double grossIncome, double taxCredit, double taxOwed, boolean usertype) {
+        this.ID = currentID++;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.PPSN = PPSN;
+        this.grossIncome = grossIncome;
+        this.taxCredit = taxCredit;
+        this.taxOwed = taxOwed;
+        this.usertype = usertype;
+    }
+    
+
+   
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPPSN(String PPSN) {
+        this.PPSN = PPSN;
+    }
+
+    public void setGrossIncome(double grossIncome) {
+        this.grossIncome = grossIncome;
+    }
+
+    public void setTaxCredit(double taxCredit) {
+        this.taxCredit = taxCredit;
+    }
+
+    public void setTaxOwed(double taxOwed) {
+        this.taxOwed = taxOwed;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPPSN() {
+        return PPSN;
+    }
+
+    public double getGrossIncome() {
+        return grossIncome;
+    }
+
+    public double getTaxCredit() {
+        return taxCredit;
+    }
+
+    public double getTaxOwed() {
+        return taxOwed;
+    }
+
+    public boolean isUsertype() {
+        return usertype;
+    }
+
+    public static int getCurrentID() {
+        return currentID;
+    }
     
 }
