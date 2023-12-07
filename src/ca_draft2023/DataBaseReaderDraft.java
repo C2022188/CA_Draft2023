@@ -39,7 +39,7 @@ public class DataBaseReaderDraft extends DatabaseDraft{
                 double grossIncome = results.getDouble("grossIncome");
                 double taxCredit = results.getDouble("taxCredit");
                 double taxOwed = results.getDouble("taxOwed");
-                boolean usertype = results.getBoolean("usertype");
+                String usertype = results.getString("usertype");
                 String username = results.getString("username");
                 String password = results.getString("Password");
                 
@@ -75,7 +75,7 @@ public Users getUsersData(int UsersID) {
                 double grossIncome = results.getDouble("grossIncome");
                 double taxCredit = results.getDouble("taxCredit");
                 double taxOwed = results.getDouble("taxOwed");
-                boolean usertype = results.getBoolean("usertype");
+                String usertype = results.getString("usertype");
                 String username = results.getString("username");
                 String password = results.getString("Password");
                 

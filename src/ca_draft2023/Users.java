@@ -21,12 +21,12 @@ public class Users extends CA_Draft2023{
     private double taxCredit;
     private double taxOwed;
     
-    private boolean usertype;
+    private String usertype;
     private String username;
     private String password;
     
 
-    public Users(int ID, String firstName, String lastName, String email, String PPSN, double grossIncome, double taxCredit, double taxOwed, boolean usertype, String username, String password) {
+    public Users(int ID, String firstName, String lastName, String email, String PPSN, double grossIncome, double taxCredit, double taxOwed, String usertype, String username, String password) {
         this.ID = ID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -99,7 +99,9 @@ public class Users extends CA_Draft2023{
         return taxOwed;
     }
 
-    public boolean isUsertype() {
+ 
+
+    public String getUsertype() {
         return usertype;
     }
 

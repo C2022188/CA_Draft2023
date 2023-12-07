@@ -22,9 +22,9 @@ public class DataBaseWriterDraft extends DatabaseDraft {
             Statement stmt = conn.createStatement();  
         ){
             String sql = String.format("INSERT INTO " + TABLE_NAME + " VALUES ("
-                    + "'%d', '%s', '%s', '%s', '%s', '%f', '%f', '%f', '%b', '%s', %s);",
+                    + "'%d', '%s', '%s', '%s', '%s', '%f', '%f', '%f', '%s', '%s', %s);",
                     users.getID(), users.getFirstName(), users.getLastName(), users.getEmail(), users.getPPSN(), users.getGrossIncome(), 
-                    users.getTaxCredit(), users.getTaxOwed(), users.isUsertype(), users.getUsername(), users.getPassword());
+                    users.getTaxCredit(), users.getTaxOwed(), users.getUsertype(), users.getUsername(), users.getPassword());
             stmt.execute(sql);
             return true;
         } catch (Exception e) {

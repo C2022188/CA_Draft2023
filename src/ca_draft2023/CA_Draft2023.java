@@ -96,7 +96,7 @@
                     String PPSN;
                     double grossIncome;
                     double taxCredit;
-                    boolean usertype;
+                    String usertype;
                     String username;
                     String password;
 
@@ -120,7 +120,8 @@
                     taxCredit = UserInput.nextDouble();
 
                     System.out.println("User Type: ADMIN / REGULAR USER ");
-                    usertype = UserInput.nextBoolean();
+                    usertype = UserInput.nextLine();
+             
                     
                     System.out.println("New Username: ");
                     username = UserInput.nextLine();
