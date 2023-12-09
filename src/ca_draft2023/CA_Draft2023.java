@@ -96,13 +96,16 @@
                     String PPSN;
                     double grossIncome;
                     double taxCredit;
-                    String usertype;
+//                    String usertype;
                     String username;
                     String password;
 
 
                     System.out.println("First Name: ");
                     firstName = UserInput.nextLine();
+           if (userExists()) {
+        System.out.println("User already exists in the database. Please choose a different username.");
+        return;}
                     
                     System.out.println("Last Name: ");
                     lastName = UserInput.nextLine();
@@ -115,12 +118,14 @@
                     
                     System.out.println("grossIncome: ");
                     grossIncome = UserInput.nextDouble();
-                    
+                    UserInput.nextLine();
+                     
                     System.out.println("Tax Credit: ");
                     taxCredit = UserInput.nextDouble();
+                    UserInput.nextLine();
 
-                    System.out.println("User Type: ADMIN / REGULAR USER ");
-                    usertype = UserInput.nextLine();
+//                    System.out.println("User Type: ADMIN / REGULAR USER ");
+//                    usertype = UserInput.nextLine();
              
                     
                     System.out.println("New Username: ");
@@ -129,7 +134,7 @@
                     System.out.println("Password: ");
                     password = UserInput.nextLine();
 
-                    Users newUser = new Users (0, firstName, lastName, email, PPSN, grossIncome, taxCredit, 0, usertype, username, password);
+                    Users newUser = new Users (0, firstName, lastName, email, PPSN, grossIncome, taxCredit, 0, username, password);
                     addToDatabase(newUser);
 
                     }
@@ -140,9 +145,9 @@
                     boolean success = dbw.newUser(newUser);
 
                     if (success) {
-                        System.out.println("Novo usuário adicionado ao banco de dados com sucesso.");
+                        System.out.println("New user add.");
                     } else {
-                        System.out.println("Erro ao adicionar novo usuário ao banco de dados.");
+                        System.out.println("Error.");
                     }
                 }
                     }

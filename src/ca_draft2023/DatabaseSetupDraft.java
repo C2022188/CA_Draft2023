@@ -34,7 +34,6 @@ public class DatabaseSetupDraft extends DatabaseDraft {
                     + "grossIncome DOUBLE(10, 2),"
                     + "taxCredit DOUBLE(10, 2),"
                     + "taxOwed DOUBLE (10, 2),"
-                    + "userType BOOLEAN,"
                     + "username VARCHAR(255),"
                     + "password VARCHAR(255)"
                     + ");";

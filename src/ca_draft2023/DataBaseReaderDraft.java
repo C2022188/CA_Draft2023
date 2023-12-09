@@ -39,11 +39,11 @@ public class DataBaseReaderDraft extends DatabaseDraft{
                 double grossIncome = results.getDouble("grossIncome");
                 double taxCredit = results.getDouble("taxCredit");
                 double taxOwed = results.getDouble("taxOwed");
-                String usertype = results.getString("usertype");
+//                String usertype = results.getString("usertype");
                 String username = results.getString("username");
                 String password = results.getString("Password");
                 
-                Users user = new Users (ID, firstName, lastName, email,  PPSN, grossIncome, taxCredit, taxOwed, usertype, username, password);
+                Users user = new Users (ID, firstName, lastName, email,  PPSN, grossIncome, taxCredit, taxOwed, username, password);
                 
                 usersList.add(user);
             }
@@ -75,11 +75,11 @@ public Users getUsersData(int UsersID) {
                 double grossIncome = results.getDouble("grossIncome");
                 double taxCredit = results.getDouble("taxCredit");
                 double taxOwed = results.getDouble("taxOwed");
-                String usertype = results.getString("usertype");
+//                String usertype = results.getString("usertype");
                 String username = results.getString("username");
                 String password = results.getString("Password");
                 
-                Users user = new Users (ID, firstName, lastName, email,  PPSN, grossIncome, taxCredit, taxOwed, usertype, username, password);
+                Users user = new Users (ID, firstName, lastName, email,  PPSN, grossIncome, taxCredit, taxOwed, username, password);
                 return user;
                 
             } catch (Exception e) {
