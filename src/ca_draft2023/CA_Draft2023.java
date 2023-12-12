@@ -97,7 +97,11 @@
                         String email;
                         String PPSN;
                         double grossIncome;
+<<<<<<< HEAD
                         double taxCredit = 0.0;
+=======
+                      //  double taxCredit;
+>>>>>>> b4c110b58a2c3f57524a6a9b8b8a235757747ef4
     //                    String usertype;
                         String username;
                         String password;
@@ -120,6 +124,7 @@
                         grossIncome = UserInput.nextDouble();
                         UserInput.nextLine();
                         
+<<<<<<< HEAD
                         System.out.println("Single or Married?");
                          double singlePersonCredit = 1775.0;
                          double marriedPersonCredit = 3550.0;
@@ -143,7 +148,31 @@
                          }else {
                              System.out.println("Error");
                          }
+=======
+>>>>>>> b4c110b58a2c3f57524a6a9b8b8a235757747ef4
         
+        double prsi = TaxCalculatation.calculatePRSI(grossIncome);
+        double usc = TaxCalculatation.calculateUSC(grossIncome);
+
+        System.out.println("Single or Married? ");
+        String maritalStatus = UserInput.nextLine();
+
+        double taxCredit = 0;
+
+        if (maritalStatus.equalsIgnoreCase("Single")) {
+            taxCredit = TaxCalculatation.TaxCreditSingleYearly();
+        } else if (maritalStatus.equalsIgnoreCase("Married")) {
+            taxCredit = TaxCalculatation.TaxCreditMarriedYearly();
+        } else {
+            System.out.println("Invalid marital status input.");
+        }
+
+        System.out.println("PRSI: " + prsi);
+        System.out.println("USC: " + usc);
+        System.out.println("Tax Credits: " + taxCredit);
+
+        UserInput.close();
+    
                         
 
     //                    System.out.println("User Type: ADMIN / REGULAR USER ");
