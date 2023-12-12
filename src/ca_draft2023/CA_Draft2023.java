@@ -97,7 +97,7 @@
                         String email;
                         String PPSN;
                         double grossIncome;
-                        double taxCredit;
+                      //  double taxCredit;
     //                    String usertype;
                         String username;
                         String password;
@@ -120,23 +120,29 @@
                         grossIncome = UserInput.nextDouble();
                         UserInput.nextLine();
                         
-                        System.out.println("Single or Married?");
-                         double singlePersonCredit = 1775.0;
-                         double employeeCredit = 1775.0;
-                         double totalTaxCredits = singlePersonCredit + employeeCredit;
-                         
-                         double marriedPersonCredit = 3550.0;
-                         double totalmarried = marriedPersonCredit + employeeCredit;
-
-                         taxCredit = UserInput.nextDouble();
-                          UserInput.nextLine(); 
-                         if( UserInput.equals("Single") ){
-                             System.out.println(totalTaxCredits);                             
-                             
-                         }else{
-                             System.out.println(totalmarried);
-                         }
         
+        double prsi = TaxCalculatation.calculatePRSI(grossIncome);
+        double usc = TaxCalculatation.calculateUSC(grossIncome);
+
+        System.out.println("Single or Married? ");
+        String maritalStatus = UserInput.nextLine();
+
+        double taxCredit = 0;
+
+        if (maritalStatus.equalsIgnoreCase("Single")) {
+            taxCredit = TaxCalculatation.TaxCreditSingleYearly();
+        } else if (maritalStatus.equalsIgnoreCase("Married")) {
+            taxCredit = TaxCalculatation.TaxCreditMarriedYearly();
+        } else {
+            System.out.println("Invalid marital status input.");
+        }
+
+        System.out.println("PRSI: " + prsi);
+        System.out.println("USC: " + usc);
+        System.out.println("Tax Credits: " + taxCredit);
+
+        UserInput.close();
+    
                         
 
     //                    System.out.println("User Type: ADMIN / REGULAR USER ");
