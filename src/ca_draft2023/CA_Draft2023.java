@@ -88,7 +88,7 @@
                         return false; // User not founded
                     }
 
-                        public static void newUser() throws SQLException {
+                        public static double newUser() throws SQLException {
 
                         Scanner UserInput = new Scanner(System.in);
 
@@ -119,10 +119,25 @@
                         System.out.println("grossIncome: ");
                         grossIncome = UserInput.nextDouble();
                         UserInput.nextLine();
+                        
+                        System.out.println("Single or Married?");
+                         double singlePersonCredit = 1775.0;
+                         double employeeCredit = 1775.0;
+                         double totalTaxCredits = singlePersonCredit + employeeCredit;
+                         
+                         double marriedPersonCredit = 3550.0;
+                         double totalmarried = marriedPersonCredit + employeeCredit;
 
-                        System.out.println("Tax Credit: ");
-                        taxCredit = UserInput.nextDouble();
-                        UserInput.nextLine();
+                         taxCredit = UserInput.nextDouble();
+                          UserInput.nextLine(); 
+                         if( UserInput.equals("Single") ){
+                             System.out.println(totalTaxCredits);                             
+                             
+                         }else{
+                             System.out.println(totalmarried);
+                         }
+        
+                        
 
     //                    System.out.println("User Type: ADMIN / REGULAR USER ");
     //                    usertype = UserInput.nextLine();
@@ -139,6 +154,7 @@
  
                     
                         addToDatabase(adm);
+                        return 0;
                         
                         }
 
