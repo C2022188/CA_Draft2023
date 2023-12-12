@@ -8,12 +8,11 @@ package ca_draft2023;
  *
  * @author caroo
  */
-<<<<<<< Updated upstream
+
 public abstract class Users{
-=======
-public class Users{
->>>>>>> Stashed changes
-    
+
+
+
     private int ID;
     private static int currentID = 1;
     
@@ -24,8 +23,6 @@ public class Users{
     private double grossIncome;
     private double taxCredit;
     private double taxOwed;
-    
-//    private String usertype;
     private String username;
     private String password;
     
@@ -39,7 +36,6 @@ public class Users{
         this.grossIncome = grossIncome;
         this.taxCredit = taxCredit;
         this.taxOwed = taxOwed;
-//        this.usertype = usertype;
         this.username = username;
         this.password = password;
     }
@@ -103,11 +99,7 @@ public class Users{
         return taxOwed;
     }
 
- 
 
-//    public String getUsertype() {
-//        return usertype;
-//    }
 
     public static int getCurrentID() {
         return currentID;
