@@ -97,7 +97,7 @@
                         String email;
                         String PPSN;
                         double grossIncome;
-                        double taxCredit;
+                        double taxCredit = 0.0;
     //                    String usertype;
                         String username;
                         String password;
@@ -122,19 +122,26 @@
                         
                         System.out.println("Single or Married?");
                          double singlePersonCredit = 1775.0;
-                         double employeeCredit = 1775.0;
-                         double totalTaxCredits = singlePersonCredit + employeeCredit;
-                         
                          double marriedPersonCredit = 3550.0;
-                         double totalmarried = marriedPersonCredit + employeeCredit;
+                         double employeeCredit = 1775.0;
+                         
+                         
+                         
+                         String userInputString =  UserInput.nextLine(); 
+                                 
+                         
 
-                         taxCredit = UserInput.nextDouble();
-                          UserInput.nextLine(); 
-                         if( UserInput.equals("Single") ){
+                         
+                         if( userInputString.equalsIgnoreCase("Single") ){
+                             double totalTaxCredits = singlePersonCredit + employeeCredit;
                              System.out.println(totalTaxCredits);                             
                              
-                         }else{
+                         }else if (userInputString.equalsIgnoreCase("Married")){
+                             double totalmarried = marriedPersonCredit + employeeCredit;
+                             
                              System.out.println(totalmarried);
+                         }else {
+                             System.out.println("Error");
                          }
         
                         
