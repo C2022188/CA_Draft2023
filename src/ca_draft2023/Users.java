@@ -8,7 +8,11 @@ package ca_draft2023;
  *
  * @author caroo
  */
+<<<<<<< Updated upstream
 public abstract class Users{
+=======
+public class Users{
+>>>>>>> Stashed changes
     
     private int ID;
     private static int currentID = 1;
