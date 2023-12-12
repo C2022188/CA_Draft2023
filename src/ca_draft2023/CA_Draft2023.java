@@ -134,11 +134,11 @@
                         System.out.println("Password: ");
                         password = UserInput.nextLine();
 
-                        Users newUser = new Users (0, firstName, lastName, email, PPSN, grossIncome, taxCredit, 0, username, password);
+                        Admin_Craft adm = new Admin_Craft (0, firstName, lastName, email, PPSN, grossIncome, taxCredit, 0, username, password);
                         
  
                     
-                        addToDatabase(newUser);
+                        addToDatabase(adm);
                         
                         }
 

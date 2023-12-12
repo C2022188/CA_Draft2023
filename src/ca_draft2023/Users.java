@@ -8,7 +8,7 @@ package ca_draft2023;
  *
  * @author caroo
  */
-public class Users extends CA_Draft2023{
+public abstract class Users{
     
     private int ID;
     private static int currentID = 1;

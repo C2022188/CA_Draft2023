@@ -43,9 +43,9 @@ public class DataBaseReaderDraft extends DatabaseDraft{
                 String username = results.getString("username");
                 String password = results.getString("Password");
                 
-                Users user = new Users (ID, firstName, lastName, email,  PPSN, grossIncome, taxCredit, taxOwed, username, password);
+                Admin_Craft adm= new Admin_Craft(ID, firstName, lastName, email,  PPSN, grossIncome, taxCredit, taxOwed, username, password);
                 
-                usersList.add(user);
+                usersList.add(adm);
             }
                 
             
@@ -79,8 +79,8 @@ public Users getUsersData(int UsersID) {
                 String username = results.getString("username");
                 String password = results.getString("Password");
                 
-                Users user = new Users (ID, firstName, lastName, email,  PPSN, grossIncome, taxCredit, taxOwed, username, password);
-                return user;
+                Admin_Craft adm= new Admin_Craft (ID, firstName, lastName, email,  PPSN, grossIncome, taxCredit, taxOwed, username, password);
+                return adm;
                 
             } catch (Exception e) {
                 e.printStackTrace();
