@@ -69,7 +69,11 @@
 //                            String loginUser;
 //                            String userPassword;
 
+
                             Scanner loginInput = new Scanner(System.in);
+
+                          
+
                             String username;
                             String password;
                             
@@ -83,6 +87,7 @@
                             DataBaseReaderDraft dbr = new DataBaseReaderDraft();
         ArrayList<Users> usersList = dbr.getAllUsers();
 
+
         for (Users user : usersList) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 return true; // Login successful
@@ -90,19 +95,10 @@
         }
         return false; // Invalid username or password
     }
+                  
+ 
 
 
-//                            if(username.equals(loginAdmin) && password.equals(Adminpassword)){
-//                                return true;
-//                                
-//                            }else{
-//                                                             
-//                                
-//                            }
-                
-                        
-                
-                
                         public static boolean userExists() {
                             DataBaseReaderDraft dbr = new DataBaseReaderDraft();
                             IOUtils newUserInput = new IOUtils();
