@@ -75,7 +75,6 @@ public Users getUsersData(int UsersID) {
                 double grossIncome = results.getDouble("grossIncome");
                 double taxCredit = results.getDouble("taxCredit");
                 double taxOwed = results.getDouble("taxOwed");
-//                String usertype = results.getString("usertype");
                 String username = results.getString("username");
                 String password = results.getString("Password");
                 

@@ -36,14 +36,24 @@
 
                             switch (optionNum) {
                                 case 1:
-                                    login();
+                                    if (login()){
+                                        System.out.println("Welcome!!!");   
+                                    }else {
+                    System.out.println("Invalid username or password. Please try again.");
+                }
+                                    
                                     break;
+                                    
                                 case 2:
                                     if (!userExists()) {
-                                        newUser();
+                                        if (newUser() == 0){
                                     } else {
-                                        System.out.println("User already exists in the database. Please choose a different username.");
-                                    }   break;
+                        System.out.println("Error creating user.");
+                    }
+                } else {
+                    System.out.println("User already exists in the database. Please choose a different username.");
+                }
+                                    break;
                                 default:
                                     System.out.println("Error!.");
                                     break;
@@ -53,34 +63,56 @@
 
                         public static boolean login() {
 
-                            //***********Aqui precisamos validar o Login, e verificar se esta correto username e password *****************
+                           
+//                            String loginAdmin = "Admin";
+//                            String Adminpassword = "Dublin";
+//                            String loginUser;
+//                            String userPassword;
 
-                            IOUtils newUserInput = new IOUtils();
-
-                           // boolean usertype;
+                            Scanner loginInput = new Scanner(System.in);
                             String username;
                             String password;
+                            
+                            
+                            System.out.println("Username: ");
+                            username = loginInput.nextLine();
+                            
+                            System.out.println("Password: ");
+                            password = loginInput.nextLine();
+                            
+                            DataBaseReaderDraft dbr = new DataBaseReaderDraft();
+        ArrayList<Users> usersList = dbr.getAllUsers();
 
-                            Scanner UserInput = new Scanner(System.in);
-        
+        for (Users user : usersList) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                return true; // Login successful
+            }
+        }
+        return false; // Invalid username or password
+    }
 
-                            username = newUserInput.getUserText("Username: ");
-                            password = newUserInput.getUserText("Password: ");
 
-
-                            return true;
-
-                        }
-
+//                            if(username.equals(loginAdmin) && password.equals(Adminpassword)){
+//                                return true;
+//                                
+//                            }else{
+//                                                             
+//                                
+//                            }
+                
+                        
+                
+                
                         public static boolean userExists() {
                             DataBaseReaderDraft dbr = new DataBaseReaderDraft();
                             IOUtils newUserInput = new IOUtils();
 
                             String username = newUserInput.getUserText("Type your a username: ");
+                            String password = newUserInput.getUserText("Type your password: ");
 
                             ArrayList<Users> usersList = dbr.getAllUsers();
                             for (Users user : usersList) {
-                                if (user.getUsername().equals(username)) {
+                                if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                                     return true; // User already exists
                                 }
                             }
