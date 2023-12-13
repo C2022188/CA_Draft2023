@@ -56,6 +56,7 @@
                             //***********Aqui precisamos validar o Login, e verificar se esta correto username e password *****************
 
                             IOUtils newUserInput = new IOUtils();
+                            
 
                            // boolean usertype;
                             String username;
@@ -66,8 +67,9 @@
 
                             username = newUserInput.getUserText("Username: ");
                             password = newUserInput.getUserText("Password: ");
-
-
+                            
+                            
+                            
                             return true;
 
                         }
