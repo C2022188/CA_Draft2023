@@ -4,12 +4,15 @@
  */
 package ca_draft2023;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 /**
  *
  * @author caroo
  */
 
-public abstract class Users{
+public abstract class Users implements UserOptions{
 
 
 
@@ -126,5 +129,37 @@ public abstract class Users{
     public void setPassword(String password) {
         this.password = password;
     }
+    
+     public boolean isAdmin() {
+        return getUsername().equals("Admin") && getPassword().equals("CCT");
+    }
+
+
+@Override
+    public void executeUserOptions() {
+       modifyOwnProfile();
+       accessUserList();
+       removeUser();
+       reviewOperations();
+    }
+
+    public void modifyOwnProfile() {
+     
+    }
+    
+    public void accessUserList() {
+      
+    }
+
+    public void removeUser() {
+    
+    }
+
+    public void reviewOperations() {
+        
+    }
+
 
 }
+
+

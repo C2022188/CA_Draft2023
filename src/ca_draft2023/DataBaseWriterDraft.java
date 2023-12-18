@@ -32,6 +32,8 @@ public class DataBaseWriterDraft extends DatabaseDraft {
             return false;
         }
     }
+
+     
     
     public boolean addAllUsers(List<Users> usersList) {
         return true;

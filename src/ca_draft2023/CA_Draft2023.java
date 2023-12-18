@@ -36,14 +36,32 @@
 
                             switch (optionNum) {
                                 case 1:
-                                    if (login()){
-                                        System.out.println("Welcome!!!");   
-                                    }else {
-                    System.out.println("Invalid username or password. Please try again.");
+                                    
+                                    Users currentUser = login();
+                                    
+                                    if (currentUser != null){
+                                        System.out.println("Welcome " + currentUser.getUsername() + "!");
+                                        
+                                    currentUser.executeUserOptions();
+                                   if (currentUser.isAdmin()) {
+                    Admin_Craft adminUser = (Admin_Craft) currentUser;
+                    System.out.println("Admin Menu:");
+                    System.out.println("1: Modify Own Profile");
+                    System.out.println("2: Access User List");
+                    System.out.println("3: Other Admin Option"); // Adicione outras opções, se necessário
+                    System.out.println("0: Logout");
+
+                    }else {
+                    System.out.println("Regular Menu:");
+                    System.out.println("1: Modify Own Profile");
+                    System.out.println("2: Access User List");
+                    System.out.println("3: Other Admin Option"); // Adicione outras opções, se necessário
+                    System.out.println("0: Logout");
+                    
                 }
                                     
+                                    }
                                     break;
-                                    
                                 case 2:
                                     if (!userExists()) {
                                         if (newUser() == 0){
@@ -61,54 +79,51 @@
                         }
 
 
-                        public static boolean login() {
-
-                           
-//                            String loginAdmin = "Admin";
-//                            String Adminpassword = "Dublin";
-//                            String loginUser;
-//                            String userPassword;
+                        public static Users login() {
 
 
-                            Scanner loginInput = new Scanner(System.in);
+
+                           Scanner loginInput = new Scanner(System.in);
 
                           
 
-                            String username;
-                            String password;
+                           String username;
+                           String password;
                             
                             
-                            System.out.println("Username: ");
-                            username = loginInput.nextLine();
+                           System.out.println("Username: ");
+                           username = loginInput.nextLine();
                             
-                            System.out.println("Password: ");
-                            password = loginInput.nextLine();
+                           System.out.println("Password: ");
+                           password = loginInput.nextLine();
                             
-                            DataBaseReaderDraft dbr = new DataBaseReaderDraft();
+                           DataBaseReaderDraft dbr = new DataBaseReaderDraft();
         ArrayList<Users> usersList = dbr.getAllUsers();
 
 
         for (Users user : usersList) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-                return true; // Login successful
+                return user; // Login successful
             }
         }
-        return false; // Invalid username or password
-    }
-                  
- 
-
+        return null; // Invalid username or password
+                        }
+                        
+        
+        
+        
+     
 
                         public static boolean userExists() {
                             DataBaseReaderDraft dbr = new DataBaseReaderDraft();
                             IOUtils newUserInput = new IOUtils();
 
-                            String username = newUserInput.getUserText("Type your a username: ");
-                            String password = newUserInput.getUserText("Type your password: ");
+                            String username = newUserInput.getUserText("Choose a username: ");
+//                            String password = newUserInput.getUserText("Choose a password: ");
 
                             ArrayList<Users> usersList = dbr.getAllUsers();
                             for (Users user : usersList) {
-                                if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                                if (user.getUsername().equals(username)) {
                                     return true; // User already exists
                                 }
                             }
@@ -176,10 +191,10 @@
 
 
 
-        System.out.println("New Username: ");
+        System.out.println("To proceed with the registration, please enter your chosen USERNAME again: ");
         username = UserInput.nextLine();
 
-        System.out.println("Password: ");
+        System.out.println("Please, enter your PASSWORD: ");
         password = UserInput.nextLine();
 
         Admin_Craft adm = new Admin_Craft (0, firstName, lastName, email, PPSN, grossIncome, taxCredit, taxOwed , username, password);
@@ -207,9 +222,22 @@
                             }
     }
     
+    
                 }
                 
-                
+
+//***************Codigo para verificar se a database foi criada*************************************
+
+//            public static void main(String[] args) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException{
+//                    if (DatabaseSetupDraft.setupDB()){
+//           System.out.println("Database and table created");
+//            
+//        }else {
+//            System.out.println("Oh no! There was a database creation problem...");
+//       }
+//                    }
+//                }
+//                
 
                 
                 

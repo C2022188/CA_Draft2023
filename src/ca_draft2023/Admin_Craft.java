@@ -100,7 +100,13 @@ public class Admin_Craft extends Users {
     
     return USC;
 }
+    
+   public void modifyOwnProfile() {
+      
+        
+   }
 }
+
 
     
 
